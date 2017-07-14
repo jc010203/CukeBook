@@ -16,7 +16,7 @@ formatter.scenario({
 });
 formatter.step({
   "line": 4,
-  "name": "I have deposited $100 in my account",
+  "name": "I have deposited $100.00 in my account",
   "keyword": "Given "
 });
 formatter.step({
@@ -34,12 +34,16 @@ formatter.match({
     {
       "val": "100",
       "offset": 18
+    },
+    {
+      "val": "00",
+      "offset": 22
     }
   ],
-  "location": "Steps.iHaveDeposited$InMyAccount(int)"
+  "location": "Steps.iHaveDeposited$InMyAccount(int,int)"
 });
 formatter.result({
-  "duration": 157962834,
+  "duration": 194161641,
   "status": "passed"
 });
 formatter.match({
@@ -52,8 +56,8 @@ formatter.match({
   "location": "Steps.iRequest$(int)"
 });
 formatter.result({
-  "duration": 2095840,
-  "error_message": "cucumber.api.PendingException: TODO: implement me\n\tat steps.nicebank.Steps.iRequest$(Steps.java:28)\n\tat ✽.When I request $20(cucumber/calculator.feature:5)\n",
+  "duration": 2931454,
+  "error_message": "cucumber.api.PendingException: TODO: implement me\n\tat steps.nicebank.Steps.iRequest$(Steps.java:40)\n\tat ✽.When I request $20(cucumber/calculator.feature:5)\n",
   "status": "pending"
 });
 formatter.match({

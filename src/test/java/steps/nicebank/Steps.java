@@ -4,6 +4,7 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import nicebank.Money;
 import org.junit.Assert;
 
 /**
@@ -11,25 +12,26 @@ import org.junit.Assert;
  */
 public class Steps {
 
+    class Account {
+        private Money balance = new Money();
 
-    class Account{
-        private int balance;
-
-        public int getBalance() {
-            return balance;
+        public void deposit(Money amount) {
+            balance = balance.add(amount);
         }
 
-        public void deposit(int amount){
-            balance += amount;
+        public Money getBalance() {
+            return balance;
         }
     }
 
-    @Given("^I have deposited \\$(\\d+) in my account$")
-    public void iHaveDeposited$InMyAccount(int amount) throws Throwable {
+    @Given("^I have deposited \\$(\\d+)\\.(\\d+) in my account$")
+    public void iHaveDeposited$InMyAccount(int dollars, int cents) throws Throwable {
         Account myAccount = new Account();
+        Money amount = new Money(dollars, cents);
         myAccount.deposit(amount);
 
-        Assert.assertEquals("Incorrect account balance -", amount, myAccount.getBalance());
+        Assert.assertEquals("Incorrect account balance -",
+                amount, myAccount.getBalance());
     }
 
     @When("^I request \\$(\\d+)$")
@@ -44,3 +46,4 @@ public class Steps {
         throw new PendingException();
     }
 }
+
