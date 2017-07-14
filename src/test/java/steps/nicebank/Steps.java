@@ -1,11 +1,13 @@
 package steps.nicebank;
 
 import cucumber.api.PendingException;
+import cucumber.api.Transform;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import nicebank.Money;
 import org.junit.Assert;
+import transforms.MoneyConverter;
 
 /**
  * Created by juan.hernandez on 7/14/17.
@@ -24,14 +26,12 @@ public class Steps {
         }
     }
 
-    @Given("^I have deposited \\$(\\d+)\\.(\\d+) in my account$")
-    public void iHaveDeposited$InMyAccount(int dollars, int cents) throws Throwable {
+    @Given("^I have deposited \\$(\\d+\\.\\d+) in my account$")
+    public void iHaveDeposited$InMyAccount(@Transform(MoneyConverter.class) Money amount) throws Throwable {
         Account myAccount = new Account();
-        Money amount = new Money(dollars, cents);
         myAccount.deposit(amount);
 
-        Assert.assertEquals("Incorrect account balance -",
-                amount, myAccount.getBalance());
+        Assert.assertEquals("Incorrect balance - ", amount, myAccount.getBalance());
     }
 
     @When("^I request \\$(\\d+)$")

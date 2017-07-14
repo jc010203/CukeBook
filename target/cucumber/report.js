@@ -32,18 +32,14 @@ formatter.step({
 formatter.match({
   "arguments": [
     {
-      "val": "100",
+      "val": "100.00",
       "offset": 18
-    },
-    {
-      "val": "00",
-      "offset": 22
     }
   ],
-  "location": "Steps.iHaveDeposited$InMyAccount(int,int)"
+  "location": "Steps.iHaveDeposited$InMyAccount(Money)"
 });
 formatter.result({
-  "duration": 194161641,
+  "duration": 161843848,
   "status": "passed"
 });
 formatter.match({
@@ -56,7 +52,7 @@ formatter.match({
   "location": "Steps.iRequest$(int)"
 });
 formatter.result({
-  "duration": 2931454,
+  "duration": 2246536,
   "error_message": "cucumber.api.PendingException: TODO: implement me\n\tat steps.nicebank.Steps.iRequest$(Steps.java:40)\n\tat ✽.When I request $20(cucumber/calculator.feature:5)\n",
   "status": "pending"
 });
