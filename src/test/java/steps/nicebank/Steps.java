@@ -4,6 +4,7 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 
 /**
  * Created by juan.hernandez on 7/14/17.
@@ -12,14 +13,23 @@ public class Steps {
 
 
     class Account{
-        public Account(int openingBalance){
+        private int balance;
 
+        public int getBalance() {
+            return balance;
+        }
+
+        public void deposit(int amount){
+            balance += amount;
         }
     }
 
     @Given("^I have deposited \\$(\\d+) in my account$")
     public void iHaveDeposited$InMyAccount(int amount) throws Throwable {
-        new Account(amount);
+        Account myAccount = new Account();
+        myAccount.deposit(amount);
+
+        Assert.assertEquals("Incorrect account balance -", amount, myAccount.getBalance());
     }
 
     @When("^I request \\$(\\d+)$")
