@@ -1,10 +1,6 @@
-Feature: Calculator
+Feature: Cash Withdrawal
 
-  As a user
-  I want to use a calculator
-  So that I don't need to calculate myself
-
-  Scenario: Add two numbers
-    Given I have a calculator
-    When I add 2 and 3
-    Then the result should be 5
+  Scenario: Successful withdrawal from an account in credit
+    Given I have deposited $100 in my account
+    When I request $20
+    Then $20 should be dispensed

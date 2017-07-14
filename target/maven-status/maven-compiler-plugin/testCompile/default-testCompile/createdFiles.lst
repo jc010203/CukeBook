@@ -1,1 +1,3 @@
 runner/RunCalculatorTest.class
+steps/nicebank/Steps.class
+steps/nicebank/Steps$Account.class
