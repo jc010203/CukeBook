@@ -14,6 +14,42 @@ import transforms.MoneyConverter;
  */
 public class Steps {
 
+    KnowsTheDomain helper;
+
+    public Steps(){
+        helper = new KnowsTheDomain();
+    }
+
+    class KnowsTheDomain{
+        private Account myAccount;
+        private Teller teller;
+        private CashSlot cashSlot;
+
+        public Account getMyAccount() {
+            if (myAccount == null){
+                myAccount = new Account();
+            }
+
+            return myAccount;
+        }
+
+        public Teller getTeller() {
+            if (teller == null){
+                teller = new Teller(getCashSlot());
+            }
+
+            return teller;
+        }
+
+        public CashSlot getCashSlot() {
+            if (cashSlot == null){
+                cashSlot = new CashSlot();
+            }
+
+            return cashSlot;
+        }
+    }
+
     class Account {
         private Money balance = new Money();
 
@@ -26,24 +62,44 @@ public class Steps {
         }
     }
 
+    class Teller{
+        private CashSlot cashSlot;
+
+        public Teller(CashSlot cashSlot){
+            this.cashSlot = cashSlot;
+        }
+
+        public void withdrawFrom(Account account,  int dollars){
+            cashSlot.dispense(dollars);
+        }
+    }
+
+    class CashSlot{
+        private int contents;
+
+        public int getContents() {
+            return contents;
+        }
+
+        public void dispense(int dollars){
+            contents = dollars;
+        }
+    }
+
     @Given("^I have deposited \\$(\\d+\\.\\d+) in my account$")
     public void iHaveDeposited$InMyAccount(@Transform(MoneyConverter.class) Money amount) throws Throwable {
-        Account myAccount = new Account();
-        myAccount.deposit(amount);
-
-        Assert.assertEquals("Incorrect balance - ", amount, myAccount.getBalance());
+        helper.getMyAccount().deposit(amount);
+        Assert.assertEquals("Incorrect balance - ", amount, helper.getMyAccount().getBalance());
     }
 
     @When("^I request \\$(\\d+)$")
-    public void iRequest$(int arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    public void iRequest$(int dollars) throws Throwable {
+        helper.getTeller().withdrawFrom(helper.getMyAccount(), dollars);
     }
 
     @Then("^\\$(\\d+) should be dispensed$")
-    public void $ShouldBeDispensed(int arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    public void $ShouldBeDispensed(int dollars) throws Throwable {
+        Assert.assertEquals("Incorrect amount dispensed -", dollars, helper.getCashSlot().getContents());
     }
 }
 
