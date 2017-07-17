@@ -3,10 +3,13 @@ package support;
 import nicebank.Account;
 import nicebank.CashSlot;
 import nicebank.Teller;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by juan.hernandez on 7/17/17.
  */
+
+@Component
 public class KnowsTheDomain {
 
     private Account myAccount;

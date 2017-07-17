@@ -11,6 +11,7 @@
     <cucumber.version>1.2.0</cucumber.version>
     <junit.version>4.11</junit.version>
     <picocontainer.version>2.14.2</picocontainer.version>
+    <spring.version>4.2.4.RELEASE</spring.version>
   </properties>
   <dependencies>
     <dependency>
@@ -26,21 +27,26 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>info.cukes</groupId>
-      <artifactId>cucumber-picocontainer</artifactId>
-      <version>${cucumber.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.picocontainer</groupId>
-      <artifactId>picocontainer</artifactId>
-      <version>${picocontainer.version}</version>
+      <groupId>info.cukes</groupId>
+      <artifactId>cucumber-spring</artifactId>
+      <version>${cucumber.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${spring.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

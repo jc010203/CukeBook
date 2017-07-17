@@ -39,7 +39,7 @@ formatter.match({
   "location": "AccountSteps.iHaveDeposited$InMyAccount(Money)"
 });
 formatter.result({
-  "duration": 207878249,
+  "duration": 151295977,
   "status": "passed"
 });
 formatter.match({
@@ -52,7 +52,7 @@ formatter.match({
   "location": "TellerSteps.iRequest$(int)"
 });
 formatter.result({
-  "duration": 979412,
+  "duration": 3436002,
   "status": "passed"
 });
 formatter.match({
@@ -65,7 +65,7 @@ formatter.match({
   "location": "CashSlotSteps.$ShouldBeDispensed(int)"
 });
 formatter.result({
-  "duration": 223219,
+  "duration": 4089240,
   "status": "passed"
 });
 });

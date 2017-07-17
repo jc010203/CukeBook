@@ -1,8 +1,12 @@
 package nicebank;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Created by juan.hernandez on 7/17/17.
  */
+
+
 public class Account {
     private Money balance = new Money();
 
