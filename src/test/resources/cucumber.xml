@@ -24,5 +24,8 @@
 
     <bean id="helper" class="support.KnowsTheDomain" scope="cucumber-glue" />
 
+    <bean id="webDriverHooks" class="hooks.WebDriverHooks" scope="cucumber-glue"/>
+
+
 
 </beans>
