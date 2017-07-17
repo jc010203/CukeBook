@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         format = { "pretty", "html:target/cucumber" },
         glue = "steps",
-        features = "classpath:cucumber/calculator.feature",
+        features = "classpath:cucumber/withdrawal.feature",
         snippets = SnippetType.CAMELCASE
 )
 public class RunCalculatorTest {

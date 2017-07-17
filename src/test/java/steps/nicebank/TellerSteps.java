@@ -6,16 +6,11 @@ import support.KnowsTheDomain;
 /**
  * Created by juan.hernandez on 7/17/17.
  */
-public class TellerSteps {
+public class TellerSteps extends Steps{
 
-    KnowsTheDomain helper;
-
-    public TellerSteps(){
-        helper = new KnowsTheDomain();
-    }
 
     @When("^I request \\$(\\d+)$")
     public void iRequest$(int dollars) throws Throwable {
-        helper.getTeller().withdrawFrom(helper.getMyAccount(), dollars);
+        getHelper().getTeller().withdrawFrom(helper.getMyAccount(), dollars);
     }
 }

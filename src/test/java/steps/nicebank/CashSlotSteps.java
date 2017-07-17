@@ -7,16 +7,11 @@ import support.KnowsTheDomain;
 /**
  * Created by juan.hernandez on 7/17/17.
  */
-public class CashSlotSteps {
+public class CashSlotSteps extends Steps{
 
-    KnowsTheDomain helper;
-
-    public CashSlotSteps(){
-        helper = new KnowsTheDomain();
-    }
 
     @Then("^\\$(\\d+) should be dispensed$")
     public void $ShouldBeDispensed(int dollars) throws Throwable {
-        Assert.assertEquals("Incorrect amount dispensed -", dollars, helper.getCashSlot().getContents());
+        Assert.assertEquals("Incorrect amount dispensed -", dollars, getHelper().getCashSlot().getContents());
     }
 }

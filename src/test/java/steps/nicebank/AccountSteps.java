@@ -10,18 +10,13 @@ import transforms.MoneyConverter;
 /**
  * Created by juan.hernandez on 7/17/17.
  */
-public class AccountSteps {
+public class AccountSteps extends Steps{
 
-    KnowsTheDomain helper;
-
-    public AccountSteps(){
-        helper = new KnowsTheDomain();
-    }
 
 
     @Given("^I have deposited \\$(\\d+\\.\\d+) in my account$")
     public void iHaveDeposited$InMyAccount(@Transform(MoneyConverter.class) Money amount) throws Throwable {
-        helper.getMyAccount().deposit(amount);
+        getHelper().getMyAccount().deposit(amount);
         Assert.assertEquals("Incorrect balance - ", amount, helper.getMyAccount().getBalance());
     }
 }
