@@ -1,1 +1,5 @@
+nicebank/Account.class
+support/KnowsTheDomain.class
+nicebank/Teller.class
 nicebank/Money.class
+nicebank/CashSlot.class

@@ -5,8 +5,12 @@ import cucumber.api.Transform;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import nicebank.Account;
+import nicebank.CashSlot;
 import nicebank.Money;
+import nicebank.Teller;
 import org.junit.Assert;
+import support.KnowsTheDomain;
 import transforms.MoneyConverter;
 
 /**
@@ -20,71 +24,6 @@ public class Steps {
         helper = new KnowsTheDomain();
     }
 
-    class KnowsTheDomain{
-        private Account myAccount;
-        private Teller teller;
-        private CashSlot cashSlot;
-
-        public Account getMyAccount() {
-            if (myAccount == null){
-                myAccount = new Account();
-            }
-
-            return myAccount;
-        }
-
-        public Teller getTeller() {
-            if (teller == null){
-                teller = new Teller(getCashSlot());
-            }
-
-            return teller;
-        }
-
-        public CashSlot getCashSlot() {
-            if (cashSlot == null){
-                cashSlot = new CashSlot();
-            }
-
-            return cashSlot;
-        }
-    }
-
-    class Account {
-        private Money balance = new Money();
-
-        public void deposit(Money amount) {
-            balance = balance.add(amount);
-        }
-
-        public Money getBalance() {
-            return balance;
-        }
-    }
-
-    class Teller{
-        private CashSlot cashSlot;
-
-        public Teller(CashSlot cashSlot){
-            this.cashSlot = cashSlot;
-        }
-
-        public void withdrawFrom(Account account,  int dollars){
-            cashSlot.dispense(dollars);
-        }
-    }
-
-    class CashSlot{
-        private int contents;
-
-        public int getContents() {
-            return contents;
-        }
-
-        public void dispense(int dollars){
-            contents = dollars;
-        }
-    }
 
     @Given("^I have deposited \\$(\\d+\\.\\d+) in my account$")
     public void iHaveDeposited$InMyAccount(@Transform(MoneyConverter.class) Money amount) throws Throwable {

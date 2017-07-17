@@ -1,7 +1,3 @@
-steps/nicebank/Steps$CashSlot.class
-steps/nicebank/Steps.class
-steps/nicebank/Steps$Account.class
 runner/RunCalculatorTest.class
-steps/nicebank/Steps$KnowsTheDomain.class
-steps/nicebank/Steps$Teller.class
+steps/nicebank/Steps.class
 transforms/MoneyConverter.class
