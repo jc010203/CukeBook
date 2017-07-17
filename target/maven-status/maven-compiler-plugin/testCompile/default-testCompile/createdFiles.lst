@@ -1,3 +1,5 @@
 runner/RunCalculatorTest.class
-steps/nicebank/Steps.class
+steps/nicebank/AccountSteps.class
+steps/nicebank/CashSlotSteps.class
+steps/nicebank/TellerSteps.class
 transforms/MoneyConverter.class

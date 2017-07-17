@@ -36,10 +36,10 @@ formatter.match({
       "offset": 18
     }
   ],
-  "location": "Steps.iHaveDeposited$InMyAccount(Money)"
+  "location": "AccountSteps.iHaveDeposited$InMyAccount(Money)"
 });
 formatter.result({
-  "duration": 284018816,
+  "duration": 265682391,
   "status": "passed"
 });
 formatter.match({
@@ -49,10 +49,10 @@ formatter.match({
       "offset": 11
     }
   ],
-  "location": "Steps.iRequest$(int)"
+  "location": "TellerSteps.iRequest$(int)"
 });
 formatter.result({
-  "duration": 1054063,
+  "duration": 1520671,
   "status": "passed"
 });
 formatter.match({
@@ -62,10 +62,11 @@ formatter.match({
       "offset": 1
     }
   ],
-  "location": "Steps.$ShouldBeDispensed(int)"
+  "location": "CashSlotSteps.$ShouldBeDispensed(int)"
 });
 formatter.result({
-  "duration": 185189,
-  "status": "passed"
+  "duration": 2128697,
+  "error_message": "java.lang.AssertionError: Incorrect amount dispensed - expected:\u003c20\u003e but was:\u003c0\u003e\n\tat org.junit.Assert.fail(Assert.java:88)\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\n\tat org.junit.Assert.assertEquals(Assert.java:118)\n\tat org.junit.Assert.assertEquals(Assert.java:555)\n\tat steps.nicebank.CashSlotSteps.$ShouldBeDispensed(CashSlotSteps.java:20)\n\tat ✽.Then $20 should be dispensed(cucumber/calculator.feature:6)\n",
+  "status": "failed"
 });
 });

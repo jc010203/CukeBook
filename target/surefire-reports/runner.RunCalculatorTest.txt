@@ -1,4 +1,22 @@
 -------------------------------------------------------------------------------
 Test set: runner.RunCalculatorTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.23 sec
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 1.261 sec <<< FAILURE!
+Then $20 should be dispensed(Scenario: Successful withdrawal from an account in credit)  Time elapsed: 0.018 sec  <<< FAILURE!
+java.lang.AssertionError: Incorrect amount dispensed - expected:<20> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:743)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:555)
+	at steps.nicebank.CashSlotSteps.$ShouldBeDispensed(CashSlotSteps.java:20)
+	at ✽.Then $20 should be dispensed(cucumber/calculator.feature:6)
+
+Scenario: Successful withdrawal from an account in credit  Time elapsed: 0.037 sec  <<< FAILURE!
+java.lang.AssertionError: Incorrect amount dispensed - expected:<20> but was:<0>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:743)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:555)
+	at steps.nicebank.CashSlotSteps.$ShouldBeDispensed(CashSlotSteps.java:20)
+	at ✽.Then $20 should be dispensed(cucumber/calculator.feature:6)
+

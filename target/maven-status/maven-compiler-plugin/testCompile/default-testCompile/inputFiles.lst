@@ -1,3 +1,5 @@
+/Users/juan.hernandez/Desktop/cucumber-jvm-maven/src/test/java/steps/nicebank/TellerSteps.java
 /Users/juan.hernandez/Desktop/cucumber-jvm-maven/src/test/java/runner/RunCalculatorTest.java
 /Users/juan.hernandez/Desktop/cucumber-jvm-maven/src/test/java/transforms/MoneyConverter.java
-/Users/juan.hernandez/Desktop/cucumber-jvm-maven/src/test/java/steps/nicebank/Steps.java
+/Users/juan.hernandez/Desktop/cucumber-jvm-maven/src/test/java/steps/nicebank/CashSlotSteps.java
+/Users/juan.hernandez/Desktop/cucumber-jvm-maven/src/test/java/steps/nicebank/AccountSteps.java
