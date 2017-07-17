@@ -19,8 +19,6 @@ public class AccountSteps extends Steps{
     @Autowired
     KnowsTheDomain helper;
 
-    @Autowired
-    WebDriverHooks webDriverHooks;
 
     @Given("^I have deposited \\$(\\d+\\.\\d+) in my account$")
     public void iHaveDeposited$InMyAccount(@Transform(MoneyConverter.class) Money amount) throws Throwable {
