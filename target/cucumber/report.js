@@ -44,8 +44,9 @@ formatter.match({
   "location": "AccountSteps.iHaveDeposited$InMyAccount(Money)"
 });
 formatter.result({
-  "duration": 165767514,
-  "status": "passed"
+  "duration": 289869832,
+  "error_message": "java.lang.NullPointerException\n\tat steps.nicebank.AccountSteps.iHaveDeposited$InMyAccount(AccountSteps.java:33)\n\tat ✽.Given I have deposited $100.00 in my account(cucumber/withdrawal.feature:4)\n",
+  "status": "failed"
 });
 formatter.match({
   "arguments": [
@@ -54,11 +55,10 @@ formatter.match({
       "offset": 11
     }
   ],
-  "location": "TellerSteps.iRequest$(int)"
+  "location": "AccountSteps.iRequest$(int)"
 });
 formatter.result({
-  "duration": 3335067,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -70,8 +70,7 @@ formatter.match({
   "location": "CashSlotSteps.$ShouldBeDispensed(int)"
 });
 formatter.result({
-  "duration": 3402723,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
   "arguments": [
@@ -83,8 +82,6 @@ formatter.match({
   "location": "AccountSteps.theBalanceOfMyAccountShouldBe$(Money)"
 });
 formatter.result({
-  "duration": 1863021,
-  "error_message": "java.lang.AssertionError: Incorrect account balance - expected:\u003c$80.00\u003e but was:\u003c$100.00\u003e\n\tat org.junit.Assert.fail(Assert.java:88)\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\n\tat org.junit.Assert.assertEquals(Assert.java:118)\n\tat steps.nicebank.AccountSteps.theBalanceOfMyAccountShouldBe$(AccountSteps.java:33)\n\tat ✽.And the balance of my account should be $80.00(cucumber/withdrawal.feature:7)\n",
-  "status": "failed"
+  "status": "skipped"
 });
 });

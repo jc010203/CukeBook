@@ -3,5 +3,4 @@ steps/nicebank/CashSlotSteps.class
 steps/nicebank/Steps.class
 hooks/WebDriverHooks.class
 runner/RunCalculatorTest.class
-steps/nicebank/TellerSteps.class
 transforms/MoneyConverter.class
