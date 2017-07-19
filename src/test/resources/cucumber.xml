@@ -19,5 +19,4 @@
     <bean id="webDriverHooks" class="hooks.WebDriverHooks" scope="cucumber-glue"/>
 
 
-
 </beans>

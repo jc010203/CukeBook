@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="runner.RunCalculatorTest" time="0.004" errors="0" skipped="0">
+<testsuite tests="5" failures="2" name="runner.RunCalculatorTest" time="0.012" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib"/>
@@ -34,6 +34,7 @@
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.12.4"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|127.0.0.1"/>
     <property name="user.home" value="/Users/juan.hernandez"/>
     <property name="user.timezone" value="America/Mexico_City"/>
     <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
@@ -58,10 +59,29 @@
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|127.0.0.1"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|127.0.0.1"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="Scenario: Successful withdrawal from an account in credit" name="Given I have deposited $100.00 in my account" time="0.001"/>
   <testcase classname="Scenario: Successful withdrawal from an account in credit" name="When I request $20" time="0"/>
-  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="Then $20 should be dispensed" time="0.001"/>
-  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="Scenario: Successful withdrawal from an account in credit" time="0.002"/>
+  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="Then $20 should be dispensed" time="0"/>
+  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="And the balance of my account should be $80.00" time="0.005">
+    <failure message="Incorrect account balance - expected:&lt;$80.00&gt; but was:&lt;$100.00&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Incorrect account balance - expected:&lt;$80.00&gt; but was:&lt;$100.00&gt;
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:743)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at steps.nicebank.AccountSteps.theBalanceOfMyAccountShouldBe$(AccountSteps.java:33)
+	at ✽.And the balance of my account should be $80.00(cucumber/withdrawal.feature:7)
+</failure>
+  </testcase>
+  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="Scenario: Successful withdrawal from an account in credit" time="0.006">
+    <failure message="Incorrect account balance - expected:&lt;$80.00&gt; but was:&lt;$100.00&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Incorrect account balance - expected:&lt;$80.00&gt; but was:&lt;$100.00&gt;
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:743)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at steps.nicebank.AccountSteps.theBalanceOfMyAccountShouldBe$(AccountSteps.java:33)
+	at ✽.And the balance of my account should be $80.00(cucumber/withdrawal.feature:7)
+</failure>
+  </testcase>
 </testsuite>

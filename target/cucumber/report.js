@@ -29,6 +29,11 @@ formatter.step({
   "name": "$20 should be dispensed",
   "keyword": "Then "
 });
+formatter.step({
+  "line": 7,
+  "name": "the balance of my account should be $80.00",
+  "keyword": "And "
+});
 formatter.match({
   "arguments": [
     {
@@ -39,7 +44,7 @@ formatter.match({
   "location": "AccountSteps.iHaveDeposited$InMyAccount(Money)"
 });
 formatter.result({
-  "duration": 151295977,
+  "duration": 165767514,
   "status": "passed"
 });
 formatter.match({
@@ -52,7 +57,7 @@ formatter.match({
   "location": "TellerSteps.iRequest$(int)"
 });
 formatter.result({
-  "duration": 3436002,
+  "duration": 3335067,
   "status": "passed"
 });
 formatter.match({
@@ -65,7 +70,21 @@ formatter.match({
   "location": "CashSlotSteps.$ShouldBeDispensed(int)"
 });
 formatter.result({
-  "duration": 4089240,
+  "duration": 3402723,
   "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "80.00",
+      "offset": 37
+    }
+  ],
+  "location": "AccountSteps.theBalanceOfMyAccountShouldBe$(Money)"
+});
+formatter.result({
+  "duration": 1863021,
+  "error_message": "java.lang.AssertionError: Incorrect account balance - expected:\u003c$80.00\u003e but was:\u003c$100.00\u003e\n\tat org.junit.Assert.fail(Assert.java:88)\n\tat org.junit.Assert.failNotEquals(Assert.java:743)\n\tat org.junit.Assert.assertEquals(Assert.java:118)\n\tat steps.nicebank.AccountSteps.theBalanceOfMyAccountShouldBe$(AccountSteps.java:33)\n\tat ✽.And the balance of my account should be $80.00(cucumber/withdrawal.feature:7)\n",
+  "status": "failed"
 });
 });

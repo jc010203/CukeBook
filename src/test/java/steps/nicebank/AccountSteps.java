@@ -1,7 +1,9 @@
 package steps.nicebank;
 
+import cucumber.api.PendingException;
 import cucumber.api.Transform;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import hooks.WebDriverHooks;
 import nicebank.Money;
 import org.junit.Assert;
@@ -24,5 +26,10 @@ public class AccountSteps extends Steps{
     public void iHaveDeposited$InMyAccount(@Transform(MoneyConverter.class) Money amount) throws Throwable {
         helper.getMyAccount().deposit(amount);
         Assert.assertEquals("Incorrect balance - ", amount, helper.getMyAccount().getBalance());
+    }
+
+    @Then("^the balance of my account should be \\$(\\d+\\.\\d+)$")
+    public void theBalanceOfMyAccountShouldBe$(@Transform(MoneyConverter.class) Money amount) throws Throwable {
+        Assert.assertEquals("Incorrect account balance -", amount, helper.getMyAccount().getBalance());
     }
 }
