@@ -1,5 +1,6 @@
 package steps.nicebank;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import support.KnowsTheDomain;
 
 /**
@@ -7,13 +8,8 @@ import support.KnowsTheDomain;
  */
 public class Steps {
 
-    protected static KnowsTheDomain helper;
+    @Autowired
+    KnowsTheDomain helper;
 
-    public static KnowsTheDomain getHelper(){
-        if(null == helper){
-            helper = new KnowsTheDomain();
-        }
-        return helper;
-    }
 
 }

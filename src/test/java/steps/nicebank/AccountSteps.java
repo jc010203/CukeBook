@@ -20,8 +20,6 @@ import transforms.MoneyConverter;
  */
 public class AccountSteps extends Steps{
 
-    @Autowired
-    KnowsTheDomain helper;
 
     private Account myAccount;
 
@@ -35,7 +33,7 @@ public class AccountSteps extends Steps{
 
     @When("^I request \\$(\\d+)$")
     public void iRequest$(int dollars) throws Throwable {
-        getHelper().getTeller().withdrawFrom(myAccount, dollars);
+        helper.getTeller().withdrawFrom(myAccount, dollars);
     }
 
     @Then("^the balance of my account should be \\$(\\d+\\.\\d+)$")
