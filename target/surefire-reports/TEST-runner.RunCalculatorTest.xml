@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="runner.RunCalculatorTest" time="0.065" errors="2" skipped="3">
+<testsuite tests="5" failures="0" name="runner.RunCalculatorTest" time="0.022" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib"/>
@@ -63,32 +63,9 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|127.0.0.1"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="Given I have deposited $100.00 in my account" time="0.005">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at steps.nicebank.AccountSteps.iHaveDeposited$InMyAccount(AccountSteps.java:33)
-	at ✽.Given I have deposited $100.00 in my account(cucumber/withdrawal.feature:4)
-</error>
-    <system-out>Feature: Cash Withdrawal
-</system-out>
-    <system-err>Jul 19, 2017 12:43:37 PM org.springframework.context.support.ClassPathXmlApplicationContext prepareRefresh
-INFO: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@609cd4d8: startup date [Wed Jul 19 12:43:37 CDT 2017]; root of context hierarchy
-Jul 19, 2017 12:43:37 PM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
-INFO: Loading XML bean definitions from class path resource [cucumber.xml]
-</system-err>
-  </testcase>
-  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="Scenario: Successful withdrawal from an account in credit" time="0.012">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at steps.nicebank.AccountSteps.iHaveDeposited$InMyAccount(AccountSteps.java:33)
-	at ✽.Given I have deposited $100.00 in my account(cucumber/withdrawal.feature:4)
-</error>
-  </testcase>
-  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="When I request $20" time="0.014">
-    <skipped/>
-  </testcase>
-  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="Then $20 should be dispensed" time="0.015">
-    <skipped/>
-  </testcase>
-  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="And the balance of my account should be $80.00" time="0.019">
-    <skipped/>
-  </testcase>
+  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="Given I have deposited $100.00 in my account" time="0.001"/>
+  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="When I request $20" time="0.007"/>
+  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="Then $20 should be dispensed" time="0.01"/>
+  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="And the balance of my account should be $80.00" time="0.001"/>
+  <testcase classname="Scenario: Successful withdrawal from an account in credit" name="Scenario: Successful withdrawal from an account in credit" time="0.003"/>
 </testsuite>

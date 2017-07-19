@@ -29,7 +29,7 @@ public class AccountSteps extends Steps{
     @Given("^I have deposited \\$(\\d+\\.\\d+) in my account$")
     public void iHaveDeposited$InMyAccount(@Transform(MoneyConverter.class) Money amount) throws Throwable {
         myAccount = helper.getMyAccount();
-        myAccount.deposit(amount);
+        myAccount.credit(amount);
         Assert.assertEquals("Incorrect balance - ", amount, myAccount.getBalance());
     }
 

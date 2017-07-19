@@ -44,9 +44,8 @@ formatter.match({
   "location": "AccountSteps.iHaveDeposited$InMyAccount(Money)"
 });
 formatter.result({
-  "duration": 289869832,
-  "error_message": "java.lang.NullPointerException\n\tat steps.nicebank.AccountSteps.iHaveDeposited$InMyAccount(AccountSteps.java:33)\n\tat ✽.Given I have deposited $100.00 in my account(cucumber/withdrawal.feature:4)\n",
-  "status": "failed"
+  "duration": 156636384,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -58,7 +57,8 @@ formatter.match({
   "location": "AccountSteps.iRequest$(int)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 2890206,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -70,7 +70,8 @@ formatter.match({
   "location": "CashSlotSteps.$ShouldBeDispensed(int)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 3940236,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
@@ -82,6 +83,7 @@ formatter.match({
   "location": "AccountSteps.theBalanceOfMyAccountShouldBe$(Money)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 24843623,
+  "status": "passed"
 });
 });
